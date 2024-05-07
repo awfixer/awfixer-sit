@@ -27,95 +27,178 @@
   
   <title>Tailwind App</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>AWFixer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
     body {
-      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .content {
-      flex: 1;
+    .top-bar {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .nav-link {
+    .top-bar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .top-bar .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .top-bar .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
       transition: all 0.3s ease-in-out;
     }
 
-    .nav-link:hover {
-      color: #000 !important;
-      text-decoration: underline;
+    .top-bar .nav-links a:hover {
+      color: #000;
+      background-color: #fff;
+      border-radius: 5px;
     }
 
-    .footer-link {
+    .top-bar .hamburger-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .top-bar .nav-links {
+        display: none;
+      }
+
+      .top-bar .hamburger-menu {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .hero-section {
+      background-image: url(https://github.com/awfixer.png);
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-section .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-section .paragraph {
+      padding: 1rem;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+
+    .bottom-bar {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .bottom-bar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .bottom-bar .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bottom-bar .links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
       transition: all 0.3s ease-in-out;
     }
 
-    .footer-link:hover {
-      color: #000 !important;
+    .bottom-bar .links a:hover {
+      color: #000;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    .bottom-bar .copyright {
+      font-size: 0.75rem;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <header class="bg-gray-100">
-    <nav class="container mx-auto flex justify-between items-center py-4">
-      <div class="flex items-center">
-        <img src="https://github.com/awfixer.png" alt="Logo" class="w-10 h-10" />
-        <h1 class="text-2xl font-bold ml-2">AWFixer</h1>
-      </div>
-      <ul class="flex items-center">
-        <li class="mr-6">
-          <a href="#" class="nav-link text-gray-600 hover:text-black">Home</a>
-        </li>
-        <li class="mr-6">
-          <a href="https://discord.gg/awfixer" class="nav-link text-gray-600 hover:text-black">Discord</a>
-        </li>
-        <li>
-          <a href="https://blog.awfixer.dev" class="nav-link text-gray-600 hover:text-black">Blog</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-<main class="container mx-auto py-12">
-    <section class="flex flex-col md:flex-row gap-12">
-      <div class="w-full md:w-1/2">
-        <img src="https://github.com/awfixer.png" alt="Image 1" class="w-full h-64 object-cover" />
-        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
-          This button does not work yet
-        </button>
-      </div>
-      <div class="w-full md:w-1/2">
-        <h2 class="text-2xl font-bold mb-4">Section 1</h2>
-        <p>soon...</p> 
-      </div>
-    </section>
-
-    <section class="flex flex-col md:flex-row gap-12">
-      </section>
-
-    <section class="flex flex-col md:flex-row gap-12">
-      </section>
-  </main>
-
-  <footer class="bg-gray-100 py-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <img src="https://github.com/awfixer.png" alt="Logo" class="w-10 h-10" />
-      <ul class="flex items-center">
-        <li class="mr-6">
-          <a href="https://discord.gg" class="footer-link text-gray-600 hover:text-black">Discord</a>
-        </li>
-        <li class="mr-6">
-          <a href="https://blog.awfixer.dev" class="footer-link text-gray-600 hover:text-black">Blog</a>
-        </li>
-        <li class="mr-6">
-          <a href="https://docs.awfixer.dev" class="footer-link text-gray-600 hover:text-black">Docs</a>
-        </li>
-        <li>
-          <a href="https://t.me/awfixerofficial" class="footer-link text-gray-600 hover:text-black">Telegram</a>
-        </li>
-      </ul>
+  <div class="top-bar">
+    <div class="logo">
+      AWFixer
     </div>
-  </footer>
-</body>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="https://discord.gg/awfixer">Discord</a>
+      <a href="https://blog.awfixer.dev/">Blog</a>
+      <a href="https://docs.awfixer.dev">Docs</a>
+    </div>
+    <div class="hamburger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <div class="hero-section">
+    <div class="title">
+      Welcome to the AWFixer Site
+    </div>
+    <div class="paragraph">
+      For right now this site is a placeholder, but the links take you to different parts of the site that you are going to want to look at. We have a AWFixer blog, Docs for a wide range of subjects, and an Org site that talks about people who work on these sites.
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="logo">
+      AWFixer
+    </div>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="https://discord.gg/awfixer">Discord</a>
+      <a href="https://blog.awfixer.dev/">Blog</a>
+      <a href="https://docs.awfixer.dev">Docs</a>
+    </div>
+    <div class="copyright">
+      Copyright &copy; 2024 AWFixer. All rights reserved.
+    </div>
+  </div>
+    </body>
+
 </html>
